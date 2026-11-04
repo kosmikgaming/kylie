@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="landing" lang="en" manifest="cache.appcache">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kosmik Gaming</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Every run starts from here. The referrer guard in jb.js arms the chain
+         only when it was reached from this page, so that a browser restoring
+         its last session cannot re-run it unattended. -->
+
+    <div class="shell">
+      <img class="meme" src="logokosmik.png" alt="" /><br>
+
+      <main class="panel">
+        <p class="lede">
+          <h4>Running On :</h4>
+          <div id="device-info">Loading...</div>
+          <script>
+            const deviceInfo = navigator.userAgent;
+            document.getElementById("device-info").innerText = deviceInfo;
+          </script>
+        </p>
+
+        <form class="pick" id="pick">
+          <label class="opt">
+            <input type="radio" name="payload" value="goldhen" checked />
+            <span>GoldHEN</span>
+          </label>
+
+          <button class="btn" type="submit">Jailbreak</button>
+          <p class="count" id="count"></p>
+          <p class="count" id="cache" aria-live="polite"></p>
+        </form>
+      </main>
+    </div>
+
+    <p class="byline">@sleepyboy31 :)</p>
+    <script src="launch.js"></script>
+  </body>
+</html>
